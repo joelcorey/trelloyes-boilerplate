@@ -19,8 +19,8 @@ app.use(helmet())
 app.use(cors())
 
 app.use(authMiddleware)
-app.use(cardRouter)
-app.use(listRouter)
+app.use('/api', cardRouter)
+app.use('/api', listRouter)
 
 app.use(function errorHandler(error, req, res, next) {
   let response

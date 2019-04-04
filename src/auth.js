@@ -1,4 +1,4 @@
-module.exports = app.use(function validateBearerToken(req, res, next) {
+module.exports = function validateBearerToken(req, res, next) {
   const apiToken = process.env.API_TOKEN
   const authToken = req.get('Authorization')
 
@@ -8,4 +8,4 @@ module.exports = app.use(function validateBearerToken(req, res, next) {
   }
   // move to the next middleware
   next()
-})
+}
